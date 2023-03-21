@@ -32,7 +32,7 @@ def textoutput(data_dict):
     """
     outputstrings = []
     for i, (name, data) in enumerate(data_dict.items()):
-        
+
         currstring = "{0}. {1}: {2}".format(i, name, data)
         outputstrings.append(currstring)
     print(", ".join(outputstrings))
