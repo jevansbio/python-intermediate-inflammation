@@ -26,13 +26,17 @@ def visualize(data_dict):
 
 
 def textoutput(data_dict):
-    """Display plots of basic statistical properties of the inflammation data.
+    """Display text of basic statistical properties of the inflammation data.
 
-    :param data_dict: Dictionary of name -> data to plot
+    :param data_dict: Dictionary of name -> data to output
     """
     outputstrings = []
     for i, (name, data) in enumerate(data_dict.items()):
-
-        currstring = "{0}. {1}: {2}".format(i, name, data)
+        # check if these numbers are actually int
+        if all([(j == 0) or (i / j == 1) for i, j in zip(data, np.floor(data))]):
+            data = np.int32(data)
+        else:
+            data = np.round(data, 2)
+        currstring = '{0}. {1}: {2}'.format(i, name, data)
         outputstrings.append(currstring)
-    print(", ".join(outputstrings))
+    print("\n".join(outputstrings))
