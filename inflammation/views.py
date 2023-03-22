@@ -40,3 +40,4 @@ def textoutput(data_dict):
         currstring = '{0}. {1}: {2}'.format(i, name, data)
         outputstrings.append(currstring)
     print("\n".join(outputstrings))
+    return outputstrings
