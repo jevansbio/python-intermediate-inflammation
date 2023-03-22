@@ -23,7 +23,7 @@ def visualize(data_dict):
     fig.tight_layout()
 
     plt.show()
-
+    return True
 
 def textoutput(data_dict):
     """Display text of basic statistical properties of the inflammation data.
@@ -39,5 +39,6 @@ def textoutput(data_dict):
             data = np.round(data, 2)
         currstring = '{0}. {1}: {2}'.format(i, name, data)
         outputstrings.append(currstring)
-    print("\n".join(outputstrings))
-    return outputstrings
+    finaloutputstring="\n".join(outputstrings)
+    print(finaloutputstring)
+    return finaloutputstring
